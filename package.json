@@ -1,0 +1,41 @@
+{
+  "name": "employee-management-api",
+  "version": "1.0.0",
+  "description": "Employee Management CRUD REST API built with Node.js, TypeScript, Express.js, and PostgreSQL.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "postgres:up": "docker compose up -d postgres",
+    "postgres:down": "docker compose down",
+    "db:setup": "psql -d employee_management -f database/schema.sql"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "postgresql",
+    "crud",
+    "employee-management"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.3",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

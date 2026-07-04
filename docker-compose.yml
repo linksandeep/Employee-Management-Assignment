@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: employee_management_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: employee_management
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+    - "5433:5432"
+    volumes:
+      - employee_management_pgdata:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  employee_management_pgdata:
